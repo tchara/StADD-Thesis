@@ -275,6 +275,12 @@
 
 \usepackage{wrapfig}
 
+\newcommand{\inlinecode}[1]{%
+    \colorbox{extralightcyan}{%
+        \texttt{#1}%
+    }%
+}%
+
 \newcommand{\mytable}[0]{%
 	\setcounter{table}{\thethmhelper}%
 	\addtocounter{thmhelper}{1}%
