@@ -1,0 +1,104 @@
+%
+% BA Sachsen - StA Dresden
+%
+% LaTeX-Vorlage für Abschlussarbeiten im Bereich Technik
+%
+%
+% Erstellt von Tenshi Hara und bereitgestellt unter einer
+%
+%       GNU Public License, Version 3 (GPLv3)
+%
+% Näheres zur Lizenz entnehmen Sie der Datei Lizenz.txt.
+% Sollten Sie diese Vorlage ohne die Lizenz-Datei erhalten
+% haben, informieren Sie bitte die Free Software Foundation.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+%
+% Die folgenden beiden Zeilen können Sie auskommentieren,
+% da sie nur eine störende Warning unterdrücken.
+%
+\RequirePackage{silence}
+\WarningFilter{remreset}{The remreset package}
+
+%
+% Eigentlicher Beginn des Dokuments
+%
+\documentclass[a4paper,
+pagebackref, % auskommentieren, falls Sie BibLaTeX benutzen
+twoside, % auskommentieren, falls Sie einseitig binden wollen
+% Die folgende Zeile einkommentieren, falls Sie ein PDF-A benötigen
+% pdfa,pdfapart=2,pdfaconformance=A,extension=pdf
+]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{ifthen}
+
+%
+% Alle Anpassungen der Titelseite erledigen Sie in der folgenden Datei
+%
+\input{config}
+
+%
+% Sil-ben-tren-nung
+%
+\hyphenation{Do-nau-dampf-schiff-fahrt}
+
+%
+% Ab hier der eigentliche LaTeX-Satz
+%
+\begin{document}
+\selectlanguage{ngerman}
+\include{frontbackmatter/Glossary}
+%\frontmatter
+\pagenumbering{Alph}
+\pagestyle{plain}
+\include{frontbackmatter/Title}
+\pagenumbering{alph}
+\include{frontbackmatter/Abstract}
+\cleardoublepage\label{taskpage}
+\ifthenelse{\boolean{auftragsblatt}}{
+    \includepdf[pagecommand={}]{Auftragsblatt.pdf}
+}{
+    \setcounter{page}{\value{page}+2}
+}
+\include{frontbackmatter/tocLists}
+
+%\mainmatter
+\pagenumbering{arabic}
+\pagestyle{myfancy}
+\part{Thesis}\label{pt:thesis}
+\include{chapters/Introduction}
+\include{chapters/RelatedWork}
+\include{chapters/Concept}
+\include{chapters/ProofOfConcept}
+\include{chapters/Evaluation}
+\include{chapters/Results}
+\include{chapters/Conclusion}
+%*************************************************************************
+% Literaturverzeichnis
+%*************************************************************************
+\cleardoublepage
+\include{frontbackmatter/Bibliography}
+%*************************************************************************
+% Anhang
+%*************************************************************************
+%\backmatter
+\appendix
+\cleardoublepage
+\pagenumbering{Roman}
+\part{Anhang}
+\include{chapters/AppendixA}
+\include{chapters/AppendixB}
+
+%
+% Ende
+%
+\pagestyle{plain}
+\include{frontbackmatter/Acknowledgements}
+\include{frontbackmatter/Declaration}
+
+\include{frontbackmatter/Checklist}
+\end{document}

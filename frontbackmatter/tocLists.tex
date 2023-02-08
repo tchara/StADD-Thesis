@@ -1,0 +1,61 @@
+\doparttoc
+\dopartlof
+\dopartlot
+
+\makeatletter
+\renewcommand\@pnumwidth{1.25cm}
+\makeatother
+\cleardoublepage\pdfbookmark{\contentsname}{toc}\tableofcontents\label{refTOC}
+\cleardoublepage
+
+\renewcommand{\listtheoremname}{Definitionen, Theoreme \& Beweise}
+\cleardoublepage\phantomsection
+\renewcommand\thmtformatoptarg[1]{: \enquote{#1}}
+\addcontentsline{toc}{chapter}{Definitionen, Theoreme und Beweise}\listoftheorems[numwidth={3.7em},ignoreall,onlynamed={mydef,mytheorem,myproof}]
+
+\renewcommand{\listfigurename}{Abbildungen}
+\cleardoublepage\phantomsection
+\makeatletter
+	\let\org@dottedtocline\@dottedtocline
+	\begingroup
+		\renewcommand*\@dottedtocline[3]{\org@dottedtocline{#1}{#2}{3.7em}}
+		\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}\listoffigures
+	\endgroup
+	\renewcommand*\@dottedtocline[3]{\org@dottedtocline{#1}{#2}{#3}}
+\makeatother
+
+\renewcommand{\listtablename}{Tabellen}
+\cleardoublepage\phantomsection
+\makeatletter
+	\begingroup
+		\renewcommand*\@dottedtocline[3]{\org@dottedtocline{#1}{#2}{3.7em}}
+		\addcontentsline{toc}{chapter}{Tabellenverzeichnis}\listoftables
+	\endgroup
+	\renewcommand*\@dottedtocline[3]{\org@dottedtocline{#1}{#2}{#3}}
+\makeatother
+\cleardoublepage
+
+\renewcommand{\lstlistlistingname}{Quellkode}
+\cleardoublepage\phantomsection
+\makeatletter
+	\begingroup
+		\renewcommand*\@dottedtocline[3]{\org@dottedtocline{#1}{#2}{3.7em}}
+		\addcontentsline{toc}{chapter}{Quellkodeverzeichnis}\lstlistoflistings
+	\endgroup
+	\renewcommand*\@dottedtocline[3]{\org@dottedtocline{#1}{#2}{#3}}
+\makeatother
+
+% Glossar
+\cleardoublepage\phantomsection
+\makeatletter
+	\begingroup
+		\renewcommand*\@dottedtocline[3]{\org@dottedtocline{#1}{#2}{3.7em}}
+		\addcontentsline{toc}{chapter}{Glossar}\printglossary
+% Wenn Sie keine Seitenangaben für Rücksprünge haben wollen,
+% können diese mit der Option „nonumberlist“ unterdrückt werden:
+% \printglossary[nonumberlist]
+	\endgroup
+	\renewcommand*\@dottedtocline[3]{\org@dottedtocline{#1}{#2}{#3}}
+\makeatother
+
+\cleardoublepage

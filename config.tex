@@ -1,0 +1,835 @@
+%
+% BA Sachsen - StA Dresden
+%
+% LaTeX-Vorlage für Abschlussarbeiten im Bereich Technik
+%
+%
+% Erstellt von Tenshi Hara und bereitgestellt unter einer
+%
+%       GNU Public License, Version 3 (GPLv3)
+%
+% Näheres zur Lizenz entnehmen Sie der Datei Lizenz.txt.
+% Sollten Sie diese Vorlage ohne die Lizenz-Datei erhalten
+% haben, informieren Sie bitte die Free Software Foundation.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Vorlage nutzt BibTeX. Falls Sie BibLaTeX benutzen wollen,
+% scrollen Sie ans Ende dieser Datei und beachten Sie die
+% Hinweise dort.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Zufrieden? ---> https://ko-fi.com/tchara
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 1. Personendaten
+%
+\newcommand{\myTitle}{Empfehlung für die Gestaltung wissenschaftlicher Ausarbeitungen im Studienbereich Technik, insbesondere den Ingenieurwissenschaften}
+\newcommand{\mySubtitle}{Vorlage für die Bachelor-Arbeit}
+\newcommand{\myDegree}{Bachelor of Engineering}
+\newcommand{\myDegreeShort}{B.Eng.}
+\newcommand{\myName}{Paris Studiumsmensch}
+\newcommand{\myCompany}{Praxisgesellschaft mbH \& Co KG}
+\newcommand{\myCompanyAddress}{Musterstraße 1, 01001 Dresden}
+\newcommand{\myId}{3012345}
+\newcommand{\myExpert}{Dipl.-Ing. Kader Praxismensch}
+\newcommand{\myProf}{Prof. Dr.-Ing. Arin Schlaumeier}
+\newcommand{\myAcademy}{Staatliche Studienakademie Dresden}
+% Vorsicht mit den Begriffen „Studiengang“ und „Studienrichtung“!
+\newcommand{\myStudy}{Studienrichtung Informationstechnik}
+\newcommand{\myLocation}{Dresden} 
+\newcommand{\myVersion}{Version 1.0}
+% Abgabedatum
+\newcommand{\mySubmissionDate}{22. Juli 202X}
+% Datum der Selbständigkeitserklärung
+% Abgabedatum und Datum der Selbständigkeitserklärung müssen nicht
+% zwingend identisch sein. Sie können die Erklärung bereits ein paar
+% Tage vorher (beispielsweise direkt nach dem Drucken und Binden)
+% unterschreiben, während Sie die Arbeit erst später einreichen.
+\newcommand{\myDeclarationDate}{20. Juli 202X}
+
+%
+% 2. Konfiguration
+%
+% 2a) Hat diese Arbeit einen Sperrvermerk?
+%
+\newboolean{lockflag}
+\setboolean{lockflag}{true} % „false“, falls kein Sperrvermerk
+%
+% 2b) Soll statt des Abstracts ein Autorenreferat erscheinen?
+%
+\newboolean{extendedabstract}
+\setboolean{extendedabstract}{false} % „true“, falls Autorenreferat
+
+%
+% 3. gescanntes Auftragsblatt einfügen
+%
+\newboolean{auftragsblatt}
+\setboolean{auftragsblatt}{true}
+% "false", falls kein Auftragsblatt eingebaut werden soll.
+% Das Auftragsblatt muss sowohl im Printexemplar als auch in der
+% elektronischen Version eingebunden werden! - In dieser Vorlage
+% ist dafür der Platz zwischen der Zusammenfassung und dem
+% Inhaltsverzeichnis vorgesehen.
+% Für die elektronische Version bietet sich das Einbinden eines
+% Scans an (true).
+% Für die Printexemplare sollten Sie die Seitenzähler einfach nur
+% um 2 erhöhen (true) und dann später die entsprechenden Blätter
+% einlegen:
+% * das Pflichtexemplar für das Archiv erhält das Original
+% * die anderen Exemplare eine Kopie
+
+%
+% 4. Lorem Ipsum (am Ende auskommentieren!)
+%
+\usepackage{lipsum}
+
+%
+% 5. zu verwendende Pakete
+%
+% Hinweise zur Geometrie im Dokument beachten!
+\usepackage{geometry}
+\geometry{
+    inner=40mm,
+    outer=30mm,
+    top=30mm
+}
+% Setzen Sie im folgenden die Option „htt“, wenn Sie wollen, dass
+% Text in den Umgebungen \texttt und \ttfamily auch den Trennregeln
+% des hyphenat-Pakets unterliegen sollen.
+%\usepackage[htt]{hyphenat}
+\usepackage{hyphenat}
+\usepackage[ngerman,english]{babel}
+\usepackage[babel]{csquotes}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amstext,amsthm}
+\usepackage{txfonts}
+\usepackage{upgreek,units}
+\usepackage{listings}
+\lstset{ %
+	basicstyle=\small,		% Schriftgröße im Kodeblock
+	numberstyle=\tiny,
+	numbers=left,			% Position der Zeilennummern
+	stepnumber=1,			% Schrittweite der Zeilennummern („1“ bedeutet jede Zeile wird beschriftet)
+	frame=tbl,				% Rahmen um Kodeblock (Standard: „single“)
+	xleftmargin=15pt,
+	numbersep=10pt,
+	tabsize=4,				% Tabulatorgröße (4 Leerzeichen)
+	captionpos=t,			% Position der Beschriftung
+	breaklines=true,		% automatischer Zeilenumbruch
+	breakatwhitespace=true,	% automatischer Zeilenumbruch nur an Leerzeichen, Tabulatoren, etc.
+}
+\renewcommand{\lstlistingname}{Quellkode}
+\lstdefinestyle{plain}{frame=single, breaklines=true}
+\lstdefinestyle{Java}{language=Java, basicstyle=\small, numbers=left, numberstyle=\tiny, numberblanklines=false, tabsize=4, xleftmargin=1.6em, frame=single, breaklines=true}
+\usepackage{graphicx}
+\usepackage{caption,subcaption}
+
+\usepackage[hang,multiple]{footmisc}
+\renewcommand{\footnotemargin}{1.2em}
+\usepackage{longtable,booktabs,multirow,colortbl}
+\usepackage{rotating}
+\usepackage{remreset}
+\usepackage{savefnmark}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\setlist{noitemsep, itemsep=3pt, topsep=0pt, partopsep=6pt}
+\setenumerate{noitemsep, itemsep=3pt, topsep=0pt, partopsep=6pt}
+
+\usepackage{thmtools}
+\usepackage[nothm]{thmbox}
+\usepackage[mathscr]{eucal}
+\newtheoremstyle{style}
+	{0}									%	Platz drüber
+	{0}									%	Platz drunter
+	{\normalfont}						%	Schriftstil
+	{}									%	Einrückung
+	{\normalfont\bfseries}				%	Theorembezeichner-Stil
+	{:\\\vphantom{-}\vspace*{-.75em}\\}	%	Trennzeichen Bezeichner --> Inhalt
+	{5pt plus 1pt minus 1pt}			%	Trennzeichen Text --> Theorem
+	{{\normalfont\bfseries \thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}}
+\theoremstyle{style}
+
+\definecolor{HKS41-100}{cmyk}{1.0, 0.7, 0.1, 0.5}
+\definecolor{HKS41-90}{cmyk}{0.9, 0.63, 0.09, 0.45}
+\definecolor{HKS41-80}{cmyk}{0.8, 0.56, 0.08, 0.4}
+\definecolor{HKS41-70}{cmyk}{0.7, 0.49, 0.07, 0.35}
+\definecolor{HKS41-60}{cmyk}{0.6, 0.42, 0.06, 0.3}
+\definecolor{HKS41-50}{cmyk}{0.5, 0.35, 0.05, 0.25}
+\definecolor{HKS41-40}{cmyk}{0.4, 0.28, 0.04, 0.2}
+\definecolor{HKS41-30}{cmyk}{0.3, 0.21, 0.03, 0.15}
+\definecolor{HKS41-20}{cmyk}{0.2, 0.14, 0.02, 0.1}
+\definecolor{HKS41-10}{cmyk}{0.1, 0.07, 0.01, 0.05}
+\definecolor{HKS44-100}{cmyk}{1.0, 0.5, 0.0, 0.0}
+\definecolor{HKS44-90}{cmyk}{0.9, 0.45, 0.0, 0.0}
+\definecolor{HKS44-80}{cmyk}{0.8, 0.4, 0.0, 0.0}
+\definecolor{HKS44-70}{cmyk}{0.7, 0.35, 0.0, 0.0}
+\definecolor{HKS44-60}{cmyk}{0.6, 0.3, 0.0, 0.0}
+\definecolor{HKS44-50}{cmyk}{0.5, 0.25, 0.0, 0.0}
+\definecolor{HKS44-40}{cmyk}{0.4, 0.2, 0.0, 0.0}
+\definecolor{HKS44-30}{cmyk}{0.3, 0.15, 0.0, 0.0}
+\definecolor{HKS44-20}{cmyk}{0.2, 0.1, 0.0, 0.0}
+\definecolor{HKS44-10}{cmyk}{0.1, 0.05, 0.0, 0.0}
+\definecolor{HKS36-100}{cmyk}{0.8, 0.9, 0.0, 0.0}
+\definecolor{HKS36-90}{cmyk}{0.72, 0.81, 0.0, 0.0}
+\definecolor{HKS36-80}{cmyk}{0.64, 0.72, 0.0, 0.0}
+\definecolor{HKS36-70}{cmyk}{0.56, 0.63, 0.0, 0.0}
+\definecolor{HKS36-60}{cmyk}{0.48, 0.54, 0.0, 0.0}
+\definecolor{HKS36-50}{cmyk}{0.4, 0.45, 0.0, 0.0}
+\definecolor{HKS36-40}{cmyk}{0.32, 0.36, 0.0, 0.0}
+\definecolor{HKS36-30}{cmyk}{0.24, 0.27, 0.0, 0.0}
+\definecolor{HKS36-20}{cmyk}{0.16, 0.18, 0.0, 0.0}
+\definecolor{HKS36-10}{cmyk}{0.08, 0.09, 0.0, 0.0}
+\definecolor{HKS33-100}{cmyk}{0.5, 1.0, 0.0, 0.0}
+\definecolor{HKS33-90}{cmyk}{0.45, 0.9, 0.0, 0.0}
+\definecolor{HKS33-80}{cmyk}{0.4, 0.8, 0.0, 0.0}
+\definecolor{HKS33-70}{cmyk}{0.35, 0.7, 0.0, 0.0}
+\definecolor{HKS33-60}{cmyk}{0.3, 0.6, 0.0, 0.0}
+\definecolor{HKS33-50}{cmyk}{0.25, 0.5, 0.0, 0.0}
+\definecolor{HKS33-40}{cmyk}{0.2, 0.4, 0.0, 0.0}
+\definecolor{HKS33-30}{cmyk}{0.15, 0.3, 0.0, 0.0}
+\definecolor{HKS33-20}{cmyk}{0.1, 0.2, 0.0, 0.0}
+\definecolor{HKS33-10}{cmyk}{0.05, 0.1, 0.0, 0.0}
+\definecolor{HKS57-100}{cmyk}{1.0, 0.0, 0.9, 0.2}
+\definecolor{HKS57-90}{cmyk}{0.9, 0.0, 0.81, 0.18}
+\definecolor{HKS57-80}{cmyk}{0.8, 0.0, 0.72, 0.16}
+\definecolor{HKS57-70}{cmyk}{0.7, 0.0, 0.63, 0.14}
+\definecolor{HKS57-60}{cmyk}{0.6, 0.0, 0.54, 0.12}
+\definecolor{HKS57-50}{cmyk}{0.5, 0.0, 0.45, 0.1}
+\definecolor{HKS57-40}{cmyk}{0.4, 0.0, 0.36, 0.08}
+\definecolor{HKS57-30}{cmyk}{0.3, 0.0, 0.27, 0.06}
+\definecolor{HKS57-20}{cmyk}{0.2, 0.0, 0.18, 0.04}
+\definecolor{HKS57-10}{cmyk}{0.1, 0.0, 0.09, 0.02}
+\definecolor{HKS65-100}{cmyk}{0.65, 0.0, 1.0, 0.0}
+\definecolor{HKS65-90}{cmyk}{0.585, 0.0, 0.9, 0.0}
+\definecolor{HKS65-80}{cmyk}{0.52, 0.0, 0.8, 0.0}
+\definecolor{HKS65-70}{cmyk}{0.455, 0.0, 0.7, 0.0}
+\definecolor{HKS65-60}{cmyk}{0.39, 0.0, 0.6, 0.0}
+\definecolor{HKS65-50}{cmyk}{0.325, 0.0, 0.5, 0.0}
+\definecolor{HKS65-40}{cmyk}{0.26, 0.0, 0.4, 0.0}
+\definecolor{HKS65-30}{cmyk}{0.195, 0.0, 0.3, 0.0}
+\definecolor{HKS65-20}{cmyk}{0.13, 0.0, 0.2, 0.0}
+\definecolor{HKS65-10}{cmyk}{0.065, 0.0, 0.1, 0.0}
+\definecolor{HKS07-100}{cmyk}{0.0, 0.6, 1.0, 0.0}
+\definecolor{HKS07-90}{cmyk}{0.0, 0.54, 0.9, 0.0}
+\definecolor{HKS07-80}{cmyk}{0.0, 0.48, 0.8, 0.0}
+\definecolor{HKS07-70}{cmyk}{0.0, 0.42, 0.7, 0.0}
+\definecolor{HKS07-60}{cmyk}{0.0, 0.36, 0.6, 0.0}
+\definecolor{HKS07-50}{cmyk}{0.0, 0.3, 0.5, 0.0}
+\definecolor{HKS07-40}{cmyk}{0.0, 0.24, 0.4, 0.0}
+\definecolor{HKS07-30}{cmyk}{0.0, 0.18, 0.3, 0.0}
+\definecolor{HKS07-20}{cmyk}{0.0, 0.12, 0.2, 0.0}
+\definecolor{HKS07-10}{cmyk}{0.0, 0.06, 0.1, 0.0}
+\definecolor{HKS14-100}{cmyk}{0.0, 1.0, 1.0, 0.0}
+% Benannte Farben
+\definecolor{white}{gray}{1.00}
+\definecolor{black}{gray}{0.00}
+\definecolor{skyblue}{cmyk}{0.4, 0.2, 0.0, 0.0}             % HKS44-40
+\definecolor{blue}{cmyk}{1.0, 0.5, 0.0, 0.0}                % HKS44-100
+\definecolor{lightblue}{cmyk}{0.7, 0.35, 0.0, 0.0}          % HKS44-70
+\definecolor{darkblue}{rgb}{0.04, 0.16, 0.32}               % 
+\definecolor{extradarkblue}{cmyk}{1.00, 0.70, 0.10, 0.50}   % HKS41-100
+\definecolor{darkgreen}{cmyk}{1.0, 0.0, 0.9, 0.2}           % HKS57-100
+\definecolor{green}{cmyk}{0.65, 0.0, 1.0, 0.0}              % HKS65-100
+\definecolor{purple}{cmyk}{0.5, 1.0, 0.0, 0.0}              % HKS33-100
+\definecolor{indigo}{cmyk}{0.8, 0.9, 0.0, 0.0}              % HKS36-100
+\definecolor{gray}{gray}{0.59}
+\definecolor{darkgray}{gray}{0.50}
+\definecolor{darkcyan}{cmyk}{0.87, 0.4, 0.4, 0.0}
+\definecolor{cyan}{cmyk}{0.78, 0.19, 0.01, 0.0}
+\definecolor{lightcyan}{cmyk}{0.39, 0.095, 0.005, 0.0}
+\definecolor{extralightcyan}{cmyk}{0.16, 0.1, 0.0, 0.0}
+    
+\definecolor{shadeThe}{cmyk}{.1,.05,0,0}		% HKS44_10%
+\definecolor{frameThe}{cmyk}{.7,.35,0,0}		% HKS44_70%
+\definecolor{shadeDef}{cmyk}{.07,0,.1,0}		% HKS65_10%
+\definecolor{frameDef}{cmyk}{.2,0,.4,0}			% HKS65_40%
+\definecolor{shadeThm}{cmyk}{.05,.1,0,0}		% HKS33_10%
+\definecolor{frameThm}{cmyk}{.2,.4,0,0}			% HKS33_40%
+\definecolor{shadeLem}{cmyk}{0,.06,.1,0}		% HKS07_10%
+\definecolor{frameLem}{cmyk}{0,.24,.4,0}		% HKS07_40%
+\definecolor{shadeCor}{cmyk}{.1,.07,.01,.05}	% HKS41_10%
+\definecolor{frameCor}{cmyk}{.4,.28,.04,.2}		% HKS41_40%
+\definecolor{shadePrf}{cmyk}{.08,.09,0,0}		% HKS36_10%
+\definecolor{framePrf}{cmyk}{.32,.36,0,0}		% HKS36_40%
+\definecolor{shadeAss}{cmyk}{.1,0,.09,.02}		% HKS57_10%
+\definecolor{frameAss}{cmyk}{.34,0,.36,.08}		% HKS57_40%
+
+\declaretheorem[name=Arbeitsthese,shaded={rulecolor=frameThe,rulewidth=1pt,bgcolor=shadeThe,textwidth=\textwidth-2pt}]{myworkingthesis}
+\declaretheorem[name=Annahme,numbered=no,shaded={rulecolor=frameAss,rulewidth=1pt,bgcolor=shadeAss,textwidth=\textwidth-2pt}]{myassertion}
+\declaretheorem[numberwithin=section,name=Definition,shaded={rulecolor=frameDef,rulewidth=1pt,bgcolor=shadeDef,textwidth=\textwidth-2pt}]{mydef}
+\declaretheorem[sibling=mydef,name=Theorem,shaded={rulecolor=frameThm,rulewidth=1pt,bgcolor=shadeThm,textwidth=\textwidth-2pt}]{mytheorem}
+\declaretheorem[sibling=mydef,name=Lemma,shaded={rulecolor=frameLem,rulewidth=1pt,bgcolor=shadeLem,textwidth=\textwidth-2pt}]{mylemma}
+\declaretheorem[sibling=mydef,name=Korollar,shaded={rulecolor=frameCor,rulewidth=1pt,bgcolor=shadeCor,textwidth=\textwidth-2pt}]{mycorollary}
+\declaretheorem[sibling=mydef,name=Beweis,shaded={rulecolor=framePrf,rulewidth=1pt,bgcolor=shadePrf,textwidth=\textwidth-2pt}]{myproof}
+\declaretheorem[sibling=mydef,name=Abbildung]{myfig}
+
+\AtBeginDocument{\numberwithin{lstlisting}{section}}
+\newcounter{thmhelper}[section]
+\newcounter{thesiscount}
+\makeatletter
+	\@removefromreset{footnote}{chapter}
+\makeatother
+
+\usepackage{wrapfig}
+
+\newcommand{\mytable}[0]{%
+	\setcounter{table}{\thethmhelper}%
+	\addtocounter{thmhelper}{1}%
+	}{%
+}%
+\newcommand{\myequation}[0]{%
+	\setcounter{equation}{\thethmhelper}%
+	\addtocounter{thmhelper}{1}%
+	}{%
+}%
+\newenvironment{workingthesis}[1][]{%
+	\addtocounter{thesiscount}{1}%
+	\begin{myworkingthesis}[#1]}{\end{myworkingthesis}%
+}%
+\newenvironment{assertion}[1][]{%
+	\begin{myassertion}[#1]}{\end{myassertion}%
+}%
+\newenvironment{definition}[1][]{%
+	\addtocounter{thmhelper}{1}%
+	\begin{mydef}[#1]}{\end{mydef}%
+}%
+\newenvironment{theorem}[1][]{%
+	\addtocounter{thmhelper}{1}%
+	\begin{mytheorem}[#1]}{\end{mytheorem}%
+}%
+\newenvironment{lemma}[1][]{%
+	\addtocounter{thmhelper}{1}%
+	\begin{mylemma}[#1]}{\end{mylemma}%
+}%
+\newenvironment{corollary}[1][]{%
+	\addtocounter{thmhelper}{1}%
+	\begin{mycorollary}[#1]}{\end{mycorollary}%
+}%
+\renewenvironment{proof}[1][]{%
+	\addtocounter{thmhelper}{1}%
+	\begin{myproof}[#1]}{%
+		\nopagebreak%
+		\\%
+		{} \qed%
+	\end{myproof}%
+}%
+\newcommand{\comment}[1]{%
+	\, {} \hfill {\, }%
+	{\color{gray}\begin{thmbox}[S]{\textit{Kommentar}}%
+		\setlength{\parindent}{-0.3em}%
+		\textit{#1}%
+	\end{thmbox}}%
+	\vspace{1em}%
+}%
+\renewcommand{\example}[1]{%
+	\, {} \hfill {\, }%
+	\begin{thmbox}[S]{\textit{Beispiel}}%
+		\setlength{\parindent}{-0.2em}%
+		#1%
+	\end{thmbox}%
+	\vspace{1em}%
+}%
+
+% Paket catoptions ist defekt; für Optionen in ASCII-Zeichen
+% muss händisch korrigiert werden
+% \usepackage{catoptions}
+
+\makeatletter%
+	\def\Autoref#1{%
+		\begingroup%
+			\def\reserved@a{\cpttrimspaces{#1}}%
+			\ifcsndefTF{r@#1}{%
+				\xaftercsname{\expandafter\testreftype\@fourthoffive}%
+				{r@\reserved@a}.\\{#1}%
+			}{%
+				\ref{#1}%
+			}%
+		\endgroup%
+	}%
+	\def\testreftype#1.#2\\#3{%
+		\ifcsndefTF{#1autorefname}{%
+			\def\reserved@a##1##2\@nil{%
+				\uppercase{\def\ref@name{##1}}%
+				\csn@edef{#1autorefname}{\ref@name##2}%
+				\autoref{#3}%
+			}%
+			\reserved@a#1\@nil%
+		}{%
+			\autoref{#3}%
+		}%
+	}%
+\makeatother%
+
+\usepackage{imakeidx}
+\makeindex
+
+\usepackage{xr-hyper}
+\usepackage{hyperxmp}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\numberwithin{table}{section}
+\numberwithin{equation}{section}
+\addto\extrasngerman{%
+    \renewcommand{\figureautorefname}{Abbildung}
+    \renewcommand{\tableautorefname}{Tabelle}
+	\renewcommand{\subsectionautorefname}{Unterabschnitt}%
+	\renewcommand{\sectionautorefname}{Abschnitt}%
+	\renewcommand{\chapterautorefname}{Kapitel}%
+	\renewcommand{\partautorefname}{Teil}%
+}
+\pagecolor{white}
+\usepackage{pdfpages}
+\newcommand{\imgbox}[7]{%
+	\begin{wrapfigure}{#1}{#2}%
+		\centering%
+		\vspace{-0.5em}%
+		\includegraphics[width=#3]{figures/#4}%
+		\vspace{-1.0em}%
+		\setcounter{figure}{\thethmhelper}%
+		\addtocounter{thmhelper}{1}%
+		\caption[#6]{#7}\label{fig:#5}%
+		\vspace{-0.5em}%
+	\end{wrapfigure}%
+}%
+\newcommand{\img}[5]{%
+	\begin{figure}[htbp]%
+	%% zwei Abbildungen nebeneinander
+    %%  #1 Breite der Abbildung
+	%%  #2 Abbildung
+	%%  #3 Label
+	%%  #4 TOC-Beschriftung
+	%%  #5 Beschriftung
+	%%
+	%% (Falls es komisch aussieht, setzen Sie
+	%%  nur „t“ oder „tb“ statt „htbp“)
+		\vspace{2.5em}%
+		\centering%
+		\includegraphics[width=#1]{figures/#2}
+		\vspace{-0.5em}%
+		\setcounter{figure}{\thethmhelper}%
+		\addtocounter{thmhelper}{1}%
+		\caption[#4]{#5}\label{fig:#3}%
+		\vspace{1.5em}%
+		\end{figure}%
+}%
+\newcommand\imgAB[9]{%
+	%% LaTeX-Hexerei mit \imgABcontinued
+	%% (wegen mehr als 9 Parametern)
+	\def\tmpvalone{#1}%
+	\def\tmpvaltwo{#2}%
+	\def\tmpvalthr{#3}%
+	\def\tmpvalfou{#4}%
+	\def\tmpvalfiv{#5}%
+	\def\tmpvalsix{#6}%
+	\def\tmpvalsev{#7}%
+	\def\tmpvaleig{#8}%
+	\def\tmpvalnin{#9}%
+	\imgABcontinued%
+}%
+\newcommand{\imgABcontinued}[2]{%
+	\begin{figure}[htbp]%
+	%% zwei Abbildungen nebeneinander
+    %%  #1 Label des Containers
+	%%  #2 TOC-Beschriftung des Containers
+	%%  #3 Beschriftung des Containers
+	%%  #4 Breite des linken Containers (A)
+	%%  #5 Breite der Abbildung in A
+	%%  #6 Abbildung in A
+	%%  #7 Beschriftung in A
+	%%  #8 Breite des rechten Containers (B)
+	%%  #9 Breite der Abbildung in B
+	%% #10 Abbildung in B
+	%% #11 Beschriftung in B
+	%%
+	%% (Falls es komisch aussieht, setzen Sie
+	%%  nur „t“ oder „tb“ statt „htbp“)
+		\vspace{2.5em}%
+		\centering%
+		\begin{subfigure}[t]{\tmpvalfou\textwidth}%
+			\centering%
+			\includegraphics[width=\tmpvalfiv]{figures/\tmpvalsix}%
+			\caption{\tmpvalsev}\label{fig:\tmpvalone-A}%
+		\end{subfigure}%
+		\hfill~%
+		\begin{subfigure}[t]{\tmpvaleig\textwidth}%
+			\centering%
+			\includegraphics[width=\tmpvalnin]{figures/#1}%
+			\caption{#2}\label{fig:\tmpvalone-B}%
+		\end{subfigure}%
+		\vspace{-0.5em}%
+		\addtocounter{thmhelper}{1}%
+		\setcounter{figure}{\thethmhelper}%
+		\caption[\tmpvaltwo]{\tmpvalthr}\label{fig:\tmpvalone}%
+		\vspace{1.5em}%
+	\end{figure}%
+}%
+\newcommand{\imgABstack}[9]{%
+	\begin{figure}[htbp]%
+	%% zwei Abbildungen untereinander
+	%% #1 Label des Containers
+	%% #2 TOC-Beschriftung des Containers
+	%% #3 Beschriftung des Containers
+	%% #4 Breite der oberen Abbildung (A)
+	%% #5 obere Abbildung (A)
+	%% #6 Beschriftung der oberen Abbildung (A)
+	%% #7 Breite der unteren Abbildung (B)
+	%% #8 untere Abbildung (B)
+	%% #9 Beschriftung der unteren Abbildung (B)
+	%%
+	%% (Falls es komisch aussieht, setzen Sie
+	%%  nur „t“ oder „tb“ statt „htbp“)
+		\vspace{2.5em}%
+		\centering%
+		\begin{subfigure}[t]{\textwidth}%
+			\centering%
+			\includegraphics[width=#4]{figures/#5}%
+			\caption{#6}\label{fig:#1-A}%
+		\end{subfigure}%
+		\\%
+		\vspace{2em}%
+		\begin{subfigure}[t]{\textwidth}%
+			\centering%
+			\includegraphics[width=#7]{figures/#8}%
+			\caption{#9}\label{fig:#1-B}%
+		\end{subfigure}%
+		\vspace{-0.5em}%
+		\addtocounter{thmhelper}{1}%
+		\setcounter{figure}{\thethmhelper}%
+		\caption[#2]{#3}\label{fig:#1}%
+		\vspace{1.5em}%
+	\end{figure}%
+}%
+\newcommand\imgABC[9]{%
+	%% LaTeX-Hexerei mit \imgABCcontinued
+	%% (wegen mehr als 9 Parametern)
+	\def\tmpvalone{#1}%
+	\def\tmpvaltwo{#2}%
+	\def\tmpvalthr{#3}%
+	\def\tmpvalfou{#4}%
+	\def\tmpvalfiv{#5}%
+	\def\tmpvalsix{#6}%
+	\def\tmpvalsev{#7}%
+	\def\tmpvaleig{#8}%
+	\def\tmpvalnin{#9}%
+	\imgABCcontinued%
+}%
+\newcommand{\imgABCcontinued}[3]{%
+	\begin{figure}[htbp]%
+	%% drei Abbildungen nebeneinander
+    %% #1 Label des Containers
+	%% #2 TOC-Beschriftung des Containers
+	%% #3 Beschriftung des Containers
+	%% #4 Breite der linken Abbildung (A)
+	%% #5 linke Abbildung (A)
+	%% #6 Beschriftung der linken Abbildung (A)
+	%% #7 Breite der mittleren Abbildung (B)
+	%% #8 mittlere Abbildung (B)
+	%% #9 Beschriftung der mittleren Abbildung (B)
+	%% #10 Breite der rechten Abbildung (C)
+	%% #11 rechte Abbildung (C)
+	%% #12 Beschriftung der rechten Abbildung (C)
+	%%
+	%% (Falls es komisch aussieht, setzen Sie
+	%%  nur „t“ oder „tb“ statt „htbp“)
+		\vspace{2.5em}%
+		\centering%
+		\begin{subfigure}[t]{0.3\textwidth}%
+			\centering%
+			\includegraphics[width=\tmpvalfou]{figures/\tmpvalfiv}%
+			\caption{\tmpvalsix}\label{fig:\tmpvalone-A}%
+		\end{subfigure}%
+		\hfill~%
+		\begin{subfigure}[t]{0.3\textwidth}%
+			\centering%
+			\includegraphics[width=\tmpvalsev]{figures/\tmpvaleig}%
+			\caption{\tmpvalnin}\label{fig:\tmpvalone-B}%
+		\end{subfigure}%
+		\hfill~%
+		\begin{subfigure}[t]{0.3\textwidth}%
+			\centering%
+			\includegraphics[width=#1]{figures/#2}%
+			\caption{#3}\label{fig:\tmpvalone-C}%
+		\end{subfigure}%
+		\vspace{-0.5em}%
+		\addtocounter{thmhelper}{1}%
+		\setcounter{figure}{\thethmhelper}%
+		\caption[\tmpvaltwo]{\tmpvalthr}\label{fig:\tmpvalone}%
+		\vspace{1.5em}%
+	\end{figure}%
+}%
+\newcommand\imgABCstack[9]{%
+	%% LaTeX-Hexerei mit \imgABCcontinued
+	%% (wegen mehr als 9 Parametern)
+	\def\tmpvalone{#1}%
+	\def\tmpvaltwo{#2}%
+	\def\tmpvalthr{#3}%
+	\def\tmpvalfou{#4}%
+	\def\tmpvalfiv{#5}%
+	\def\tmpvalsix{#6}%
+	\def\tmpvalsev{#7}%
+	\def\tmpvaleig{#8}%
+	\def\tmpvalnin{#9}%
+	\imgABCcontinued%
+}%
+\newcommand{\imgABCstackcontinued}[3]{%
+	\begin{figure}[htbp]%
+	%% drei Abbildungen untereinander
+    %% #1 Label des Containers
+	%% #2 TOC-Beschriftung des Containers
+	%% #3 Beschriftung des Containers
+	%% #4 Breite der oberen Abbildung (A)
+	%% #5 obere Abbildung (A)
+	%% #6 Beschriftung der oberen Abbildung (A)
+	%% #7 Breite der mittleren Abbildung (B)
+	%% #8 mittlere Abbildung (B)
+	%% #9 Beschriftung der mittleren Abbildung (B)
+	%% #10 Breite der unteren Abbildung (C)
+	%% #11 untere Abbildung (C)
+	%% #12 Beschriftung der unteren Abbildung (C)
+	%%
+	%% (Falls es komisch aussieht, setzen Sie
+	%%  nur „t“ oder „tb“ statt „htbp“)
+		\vspace{2.5em}%
+		\centering%
+		\begin{subfigure}[t]{\textwidth}%
+			\centering%
+			\includegraphics[width=\tmpvalfou]{figures/\tmpvalfiv}%
+			\caption{\tmpvalsix}\label{fig:\tmpvalone-A}%
+		\end{subfigure}%
+		\\%
+		\vspace{2em}%
+		\begin{subfigure}[t]{\textwidth}%
+			\centering%
+			\includegraphics[width=\tmpvalsev]{figures/\tmpvaleig}%
+			\caption{\tmpvalnin}\label{fig:\tmpvalone-B}%
+		\end{subfigure}%
+		\\%
+		\vspace{2em}%
+		\begin{subfigure}[t]{\textwidth}%
+			\centering%
+			\includegraphics[width=#1]{figures/#2}%
+			\caption{#3}\label{fig:\tmpvalone-C}%
+		\end{subfigure}%
+		\vspace{-0.5em}%
+		\addtocounter{thmhelper}{1}%
+		\setcounter{figure}{\thethmhelper}%
+		\caption[\tmpvaltwo]{\tmpvalthr}\label{fig:\tmpvalone}%
+		\vspace{1.5em}%
+	\end{figure}%
+}%
+\newcommand\imgABCD[9]{%
+	%% LaTeX-Hexerei mit \imgABCcontinued
+	%% (wegen mehr als 9 Parametern)
+	\def\tmpvalone{#1}%
+	\def\tmpvaltwo{#2}%
+	\def\tmpvalthr{#3}%
+	\def\tmpvalfou{#4}%
+	\def\tmpvalfiv{#5}%
+	\def\tmpvalsix{#6}%
+	\def\tmpvalsev{#7}%
+	\def\tmpvaleig{#8}%
+	\def\tmpvalnin{#9}%
+	\imgABCcontinued%
+}%
+\newcommand{\imgABCDcontinued}[6]{%
+	\begin{figure}[htbp]%
+	%% vier Abbildungen in 2x2-Anordnung (Spalten je 50%)
+    %% #1 Label des Containers
+	%% #2 TOC-Beschriftung des Containers
+	%% #3 Beschriftung des Containers
+	%% #4 Breite der oberen, linken Abbildung (A)
+	%% #5 obere, linke Abbildung (A)
+	%% #6 Beschriftung der oberen, linken Abbildung (A)
+	%% #7 Breite der oberen, rechten Abbildung (B)
+	%% #8 obere, rechte Abbildung (B)
+	%% #9 Beschriftung der oberen, rechten Abbildung (B)
+	%% #10 Breite der unteren, linken Abbildung (C)
+	%% #11 untere, linke Abbildung (C)
+	%% #12 Beschriftung der unteren, linken Abbildung (C)
+	%% #13 Breite der unteren, rechten Abbildung (D)
+	%% #14 untere, rechten Abbildung (D)
+	%% #15 Beschriftung der unteren, rechten Abbildung (D)
+	%%
+	%% (Falls es komisch aussieht, setzen Sie
+	%%  nur „t“ oder „tb“ statt „htbp“)
+		\vspace{2.5em}%
+		\centering%
+		\begin{subfigure}[t]{.45\textwidth}%
+			\centering%
+			\includegraphics[width=\tmpvalfou]{figures/\tmpvalfiv}%
+			\caption{\tmpvalsix}\label{fig:\tmpvalone-A}%
+		\end{subfigure}%
+		\hfill~%
+		\begin{subfigure}[t]{.45\textwidth}%
+			\centering%
+			\includegraphics[width=\tmpvalsev]{figures/\tmpvaleig}%
+			\caption{\tmpvalnin}\label{fig:\tmpvalone-B}%
+		\end{subfigure}%
+		\\%
+		\vspace{2em}%
+		\begin{subfigure}[t]{.45\textwidth}%
+			\centering%
+			\includegraphics[width=#1]{figures/#2}%
+			\caption{#3}\label{fig:\tmpvalone-C}%
+		\end{subfigure}%
+		\hfill~%
+		\begin{subfigure}[t]{.45\textwidth}%
+			\centering%
+			\includegraphics[width=#4]{figures/#5}%
+			\caption{#6}\label{fig:\tmpvalone-D}%
+		\end{subfigure}%
+		\vspace{-0.5em}%
+		\addtocounter{thmhelper}{1}%
+		\setcounter{figure}{\thethmhelper}%
+		\caption[\tmpvaltwo]{\tmpvalthr}\label{fig:\tmpvalone}%
+		\vspace{1.5em}%
+	\end{figure}%
+}%
+
+\usepackage[tight]{minitoc}
+\renewcommand{\ptcfont}{\small\normalfont}
+\renewcommand{\mtcfont}{\small\normalfont}
+\renewcommand{\mtcgapbeforeheads}{0pt}
+\renewcommand{\mtcgapafterheads}{-40pt}
+\mtcsetfeature{parttoc}{before}{\empty}
+\mtcsetfeature{parttoc}{after}{\empty}
+\renewcommand{\ptctitle}{Inhalte dieses Teils}
+\renewcommand{\plftitle}{Abbildungen dieses Teils}
+\renewcommand{\plttitle}{Tabellen dieses Teils}
+\renewcommand{\mtctitle}{Inhalte dieses Kapitels}
+\renewcommand{\mlftitle}{Abbildungen dieses Kapitels}
+\renewcommand{\mlttitle}{Tabellen dieses Kapitels}
+\mtcsetfeature{partlof}{before}{\empty}
+\mtcsetfeature{partlof}{after}{\empty}
+\mtcsetfeature{partlot}{before}{\empty}
+\mtcsetfeature{partlot}{after}{\empty}
+
+\usepackage{silence}
+\WarningFilter{minitoc(hints)}{W0023}
+\WarningFilter{minitoc(hints)}{W0024}
+\WarningFilter{minitoc(hints)}{W0028}
+\WarningFilter{minitoc(hints)}{W0030}
+\WarningFilter{minitoc(hints)}{W0044}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{12.2pt}
+\fancypagestyle{myfancy}{%
+    \fancyhf{}
+    \fancyhead[LE,RO]{\leftmark}
+    % Die folgende Zeile einkommentieren, wenn Ihr Name auf jeder
+    % Seite innen gesetzt werden soll.
+    %\fancyfoot[RE,LO]{\myName}
+    \fancyfoot[LE,RO]{\thepage}
+    \renewcommand{\headrulewidth}{0.2pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+}
+\fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyfoot[LE,RO]{\thepage}%
+    \renewcommand{\headrulewidth}{0pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+}
+
+% Konfiguration der Absatzumbrüche
+\setlength{\parindent}{0pt} % definiert Zeilenvorschub
+\setlength{\parskip}{4pt}   % definiert Absatzdistanz
+% Die Anweisung \noindent unterdrückt den Zeilenvorschub
+% für den Fall, dass Sie einen Wert ungleich 0 für das
+% \parindent definiert haben. Es ist üblich, dass der
+% erste Absatz nach der Überschrift des Kapitels bzw.
+% der Sektion nicht eingerückt wird.
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\hypersetup{%
+	pdfmetalang  = {de-DE},
+	pdfauthor       = {\myName},
+	pdftitle        = {{\myTitle}},
+	pdfsubject      = {Abschlussarbeit an der Berufsakademie Sachsen, \myAcademy},
+	pdfcopyright    = {Copyright ©\mySubmissionDate\ by \myName.\012All rights reserved.},
+	pdfcenterwindow = {true},
+	pdfpagelayout   = {TwoColumnRight},
+	colorlinks      = {true},
+	linkcolor       = {HKS41-100},
+	citecolor       = {HKS57-100},
+	filecolor       = {HKS07-100},
+	urlcolor        = {HKS44-100},
+}
+\usepackage[all]{hypcap}
+
+\usepackage[nameinlink,noabbrev]{cleveref}
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+%
+% pagebackref erzeugt inverse Referenzen in der Literaturliste,
+% d.h. es wird für jeden Eintrag eine Liste mit Seitenzahlen,
+% auf denen eine Referenz gesetzt wurde, erzeugt.
+%
+% Damit das funktioniert MUSS jedes bibitem in der bib-Datei
+% eine Leerzeile nach sich haben.
+%
+% Falls Sie BibLaTeX verwenden wollen, müssen Sie die folgenden
+% Zeilen bis „und~}“ auskommentieren!
+%
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+	\ifcase #1 %
+		\\(nicht explizit zitiert)%
+	\or
+		\\(zitiert auf Seite~#2)%
+	\else
+		\\(zitiert auf Seiten~#2)%
+	\fi%
+}
+\renewcommand*{\backrefsep}{, }
+\renewcommand*{\backreftwosep}{ und~}
+\renewcommand*{\backreflastsep}{ und~}
+
+\usepackage[shortcuts]{glossaries}
+% shortcuts wird für \ac und \acp benötigt
+\makeglossaries
+
+%
+% Zählvariablen für das Autorenreferat
+%
+\usepackage{refcount}
+\usepackage{totcount}
+\newtotcounter{citenum}
+\def\oldcite{}
+\let\oldcite=\bibcite
+\def\bibcite{\stepcounter{citenum}\oldcite}
+%
+% Vorsicht! Wir benutzen hier eine LaTeX-Eigenschaft in Form von
+% schwarzer Magie... Durch den Befehl \appendix in der thesis.tex
+% wird der Kapitelzähler (chapter) zurückgesetzt. Dadurch enthält
+% er am Ende nur die Anzahl Kapitel im Anhang.
+% Wenn Sie keinen \appendix haben oder den Anhang durch \section
+% anstatt \chapter organisieren, wird die Auswertung eine falsche
+% Kapitelanzahl im Autorenreferat aufzeigen.
+\regtotcounter{chapter}
+%
+% Ende Autorenreferat
+%
+
+%
+% Wenn Sie lieber BibLaTeX verwenden wollen...
+% Achtung: Backrefs funktionieren dann nicht mehr! Obiges
+%          Auskommentieren nicht vergessen! Die Literaturliste
+%          verweist dann nicht mehr auf die Seiten der
+%          Verwendung...
+%
+% \usepackage[backend=biber,style=alphabetic,natbib=true,hyperref=true,backref=true]{biblatex}
+% \DefineBibliographyStrings{ngerman}{
+%    andothers = {{et\,al\adddot}},
+%    backrefpage={zitiert auf Seite},
+%    backrefpages={zitiert auf Seiten}
+% }
+% \bibliography{bibliography} % hier korrekte .bib-Datei verlinken
+%
+% Sie müssen auch die Option „pagebackref“ in der Dokumentklasse
+% (in der thesis-tex) auskommentieren!
