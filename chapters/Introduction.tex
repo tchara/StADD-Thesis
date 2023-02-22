@@ -73,7 +73,7 @@ Ein letzter Stilhinweis: Vermeiden Sie nach Möglichkeit Silben-, Wort-, Satz- u
 
 Apropos Silben: Bei langen Kompositen und an manchen Zeilenenden tut sich \LaTeX{} sehr schwer mit der Silbentrennung. Sie haben mehrere Optionen, wie Sie dann vorgehen können:
 \begin{itemize}
-    \item{Zwingen Sie das ganze Wort in die neue Zeile indem Sie eine \texttt{mbox} um das Wort legen. Das ist auch sinnvoll, wenn Sie Gesetze o.\,ä. referenzieren und sie zusammenbehalten wollen: \inlinecode{\textbackslash mbox\{§§ 126, 126a BGB\}}.}
+    \item{Zwingen Sie das ganze Wort in die neue Zeile indem Sie eine \texttt{mbox} um das Wort legen. Das ist auch sinnvoll, wenn Sie Gesetze o.\,ä. referenzieren und sie zusammen behalten wollen: \inlinecode{\textbackslash mbox\{§§ 126, 126a BGB\}}.}
     \item{Sie können \LaTeX{} explizit die Silbenstrennung vorgeben, indem Sie die Trennstellen markieren: \inlinecode{Do\textbackslash-nau\textbackslash-dampf\textbackslash-schiff\textbackslash-fahrt}. Bei häufig verwendeten Wörtern definieren Sie die Silbentrennung lieber am Ende des Vorspanns mit der \texttt{hyphenation}-Umgebung (in dieser Vorlage in der \texttt{thesis.tex} in Zeile $47$). Aber Vorsicht: \LaTeX{} wird die Wörter dann \emph{nur} an diesen Stellen trennen.}
     \item{Nicht zu trennende Wörter können Sie statt mit einer \texttt{mbox} auch mit einer Tilde (geschütztes Leerzeichen) binden: \inlinecode{§§\textasciitilde 126,\textasciitilde 126a\textasciitilde BGB}.}
     \item{Das geschützte halbe Leerzeichen verwenden Sie bei Abkürzungen wie \inlinecode{z.\textbackslash,B.}.}
