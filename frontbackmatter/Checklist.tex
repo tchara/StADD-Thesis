@@ -1,20 +1,24 @@
 \pagestyle{empty}
 \cleardoublepage
 \pagenumbering{gobble}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\setcounter{footnote}{0}
+%%
+%% Dieses Blatt ist nicht Bestandteil der Abschlussarbeit!
+%% Entfernen Sie den Include der „Checklist.tex“ aus der
+%% „thesis.tex“ bevor Sie Drucken gehen!
+%%
 \chapter*{Checkliste Abschlussarbeit}
 In der folgenden Liste sind die wichtigsten, häufig nachgefragten Punkte rund um Ihre Abschlussarbeit zum Abhaken zusammengefasst.
-
-\noindent{\color{red}Dieses Blatt ist nicht Bestandteil der Abschlussarbeit! Entfernen Sie den Include der \texttt{Checklist.tex} aus der \texttt{thesis.tex} bevor Sie die Ausarbeitung in den Druck geben.}
 
 \begin{itemize}
     \item[$\square$]{
         formale Kriterien mit beiden Begutachtenden klären
         \begin{itemize}
-            \item[$\square$] Einseitig oder doppelseitig?
-            \item[$\square$] Zitationsstil und Referenzierstil?
+            \item[$\square$] Seitennutzung klären (einseitig oder doppelseitig)
+            \item[$\square$] Zitationsstil und Referenzierstil klären
             \item[$\square$]{
-                Sonstige Vorgaben?\\
-                (z.\,B. minimale Schriftgröße in Abbildungen)
+                Sonstige Vorgaben klären (z.\,B. minimale Schriftgröße in Abbildungen)
             }
         \end{itemize}
     }
@@ -44,14 +48,8 @@ In der folgenden Liste sind die wichtigsten, häufig nachgefragten Punkte rund u
             \item[$\square$] Scan des Auftragsblatts in elektronischer Version einfügen
         \end{itemize}
     }
-    \item[$\square$]{
-        alle referenzierten Quellen auf Quelleneigenschaften prüfen\\
-        (alles, was nicht den Quelleneigenschaften genügt, sollten Sie in Fußnoten auslagern)
-    }
-    \item[$\square$]{
-       Notwendigkeit des Thesenblatts klären\\
-       (weder in der Prüfungsordnung noch dem Modulhandbuch existiert das Thesenblatt)
-    }
+    \item[$\square$] Alle referenzierten Quellen auf Quelleneigenschaften prüfen\footnote{Alles, was nicht den Quelleneigenschaften genügt, sollten Sie in Fußnoten auslagern.}
+    \item[$\square$] Notwendigkeit des Thesenblatts klären\footnote{Weder in der Prüfungsordnung noch dem Modulhandbuch existiert das Thesenblatt.}
     \item[$\square$]{
         Zusammenfassung der Arbeit mit allen wichtigen Ergebnissen schreiben
         \begin{itemize}
@@ -62,31 +60,26 @@ In der folgenden Liste sind die wichtigsten, häufig nachgefragten Punkte rund u
     \item[$\square$]{
         Forschungsfragen und Thesen
         \begin{itemize}
-            \item[$\square$] Werden die Forschungsfragen tatsächlich in der Ausarbeitung beantwortet?
-            \item[$\square$] Falls keine Forschungsfragen: Werden die Hypothesen tatsächlich in der Ausarbeitung bestätigt oder widerlegt? Gibt es bei widerlegten Thesen Antithesen und Synthesen?
-            \item[$\square$]{
-                Wurden aus den Ergebnissen der wissenschaftlichen Untersuchung Thesen abgeleitet?
-                \begin{itemize}
-                    \item[$\square$] Forschungsfragen auf Thesenblatt übertragen
-                    \item[$\square$] Thesen auf Thesenblatt übertragen
-                \end{itemize}
-            }
+            \item[$\square$] Prüfen, ob Forschungsfragen tatsächlich in der Ausarbeitung beantwortet werden
+            \item[$\square$] Falls keine Forschungsfragen: Prüfen, ob Hypothesen in der Ausarbeitung bestätigt oder widerlegt werden
+            \item[$\square$] Bei widerlegten Thesen: Herleitung von Antithesen und/oder Synthesen prüfen
+            \item[$\square$] Falls Thesenblatt notwendig (s.o.):  Forschungsfragen und/oder Tehsen auf das Thesenblatt übertragen
         \end{itemize}
     }
-\clearpage
+    \clearpage
     \item[$\square$]{
         Druck und Abgabe vorbereiten
         \begin{itemize}
              \item[$\square$]{
                 Beim Druckgeschäft des Vertrauens nach Druckkapazitäten fragen\\
-                (Neben Ihnen wollen viele andere Studierende ihre Abschlussarbeiten drucken lassen!)
+                (Neben Ihnen wollen viele andere Studierende ihre Abschlussarbeiten drucken!)
                 \begin{itemize}
-                    \item[$\square$] Kapazitäten in der Woche der Abgabe?
-                    \item[$\square$] Bis wann spätestens PDF im Geschäft abgeben, damit Wunsch-Fertigstellungstermin gehalten werden kann?
+                    \item[$\square$] Anfragen Kapazitäten in der Woche der Abgabe
+                    \item[$\square$] Spätesten Abgabetermin PDF im Geschäft klären, damit Wunsch-Fer\-tig\-stel\-lungs\-ter\-min gehalten werden kann
                     \item[$\square$] Kosten Graustufen- vs. Farbdruck klären
                     \item[$\square$]{
                         archivierbare Bindung klären\\
-                        (Das Pflichtexemplar für das Archiv der Berufsakademie muss langzeit-archivierbar sein und darf keine Klebstoffe in der Bindung enthalten!)
+                        (Das Pflichtexemplar für das Archiv der Berufsakademie muss langzeit-ar\-chi\-vier\-bar sein und darf keine Klebstoffe in der Bindung enthalten)
                     }
                 \end{itemize}
             }
@@ -94,26 +87,26 @@ In der folgenden Liste sind die wichtigsten, häufig nachgefragten Punkte rund u
                 Im Service-Büro nachfragen:
                 \begin{itemize}
                     \item[$\square$] Bürozeiten und/oder Vertretungsregelung, falls Sie persönlich abgeben wollen
-                    \item[$\square$]{
-                        korrekte Adressierung für postalische Einreichung\\
-                        (Beachten Sie, dass die Deutsche Post AG lediglich Zustellungen binnen $3$ Werktagen für $95\,\%$ der Sendungen garantiert!)\\
-                        (Einschreiben und Rückschein bringen juristisch nichts, da diese nur nachweisen, dass Sie \emph{etwas} eingesendet haben, aber nicht \emph{was}. Wenn Sie rechtssicher auch den Inhalt der Einsendung, nämlich die Print-Exemplare, nachweisen wollen, müssen Sie einen Gerichtsvollzieher beauftragen! Achtung: Teuer.)
-                    }
+                    \item[$\square$] korrekte Adressierung für postalische\footnote{Beachten Sie, dass die Deutsche Post AG lediglich Zustellungen binnen $3$ Werktagen für $95\,\%$ der Sendungen garantiert.} Einreichung\footnote{Einschreiben und Rückschein bringen juristisch nichts, da diese nur nachweisen, dass Sie \emph{etwas} eingesendet haben, aber nicht \emph{was}. Wenn Sie rechtssicher auch den Inhalt der Einsendung, nämlich die Print-Exemplare, nachweisen wollen, müssen Sie einen Gerichtsvollzieher beauftragen! Achtung: Teuer.}
+                    \item[$\square$] Schriftliche Bestätigung der fristwahrenden Einreichung
                 \end{itemize}
+            }
+            \item[$\square$]{\color{red}
+                Diese Checkliste aus der Ausarbeitung entfernen (siehe Kommentar zu Beginn des Quellkodes; auf keinen Fall mit einbinden und/oder abgeben!)
             }
             \item[$\square$]{
                 Unterschriften und Daten prüfen
                 \begin{itemize}
                     \item[$\square$]{
-                        Abgabedatum korrekt auf Abschlussarbeit?
+                        korrektes Abgabedatum auf/in der Abschlussarbeit
                         \begin{itemize}
-                            \item[$\square$] Vor oder gleich spätester Abgabe laut Auftragsblatt bzw. genehmigter Verlängerung?
-                            \item[$\square$] Bei genehmigter Verlängerung: ursprüngliches spätestes Abgabedatum laut Auftragsblatt in Klammern hinter Abgabedatum?
+                            \item[$\square$] $\leq$ späteste Abgabe laut Auftragsblatt (bzw. genehmigter Verlängerung)
+                            \item[$\square$] Bei genehmigter Verlängerung: ursprüngliches spätestes Abgabedatum laut Auftragsblatt in Klammern hinter Abgabedatum
                         \end{itemize}
                     }
-                    \item[$\square$] Datum der Erklärung an Eidesstatt vor oder gleich Abgabedatum?
+                    \item[$\square$] Datum der Erklärung an Eidesstatt $\leq$ Abgabedatum
                     \item[$\square$]{
-                        Erklärung an Eidesstatt unterschrieben?
+                        Erklärung an Eidesstatt unterschrieben
                         \begin{itemize}
                             \item[$\square$] Print-Exemplar(e)
                             \item[$\square$] PDF-Datei
@@ -127,9 +120,7 @@ In der folgenden Liste sind die wichtigsten, häufig nachgefragten Punkte rund u
         Verteidigung vorbereiten
         \begin{itemize}
             \item[$\square$]{
-                Begutachtende nach Kritikpunkten und Fragen aus den Gutachten fragen\\
-                (die Gutachten müssen laut Prüfungsordnung binnen $4$ Wochen nach Abgabe vorliegen)\\
-                (laut Rahmengesetz haben Sie sogar einen Anspruch auf Einsicht in die Gutachten (Einsicht, nicht Kopie/Scan!), spätestens $2$ Wochen vor dem Verteidigungstermin; im Moment ignoriert die Berufsakademie diesen Rechtsanspruch, also formulieren Sie das Ganze als freundliche Anfrage an die Begutachtenden)
+                Begutachtende nach Kritikpunkten und Fragen aus den Gutachten fragen\footnote{Die Gutachten müssen laut Prüfungsordnung binnen $4$ Wochen nach Abgabe vorliegen; laut Rahmengesetz haben Sie sogar einen Anspruch auf Einsicht in die Gutachten (Einsicht, nicht Kopie/Scan!), spätestens $2$ Wochen vor dem Verteidigungstermin; im Moment ignoriert die Berufsakademie diesen Rechtsanspruch, also formulieren Sie das Ganze als freundliche Anfrage an die Begutachtenden}
                 \begin{itemize}
                     \item[$\square$] Gutachten Praxispartner
                     \item[$\square$] Gutachten Berufsakademie
@@ -139,10 +130,7 @@ In der folgenden Liste sind die wichtigsten, häufig nachgefragten Punkte rund u
                 Auf Basis der Kritikpunkte und Fragen ggf. inhaltlich nachbessern.\\
                 (Sie sollten in der Verteidigung gezielt auf Kritik eingehen und Verbesserungen präsentieren, z.\,B. \enquote{Im Gutachten wurde die Nutzerstudie in der Evaluation bemängelt. Ich habe inzwischen eine systemisch verbesserte Befragung durchgeführt; die Ergebnisse konnten im Rahmen des Fehlermaßes reproduziert und somit bestätigt werden.})
             }         
-            \item[$\square$]{
-                Notwendigkeit des Posters für die Verteidigung klären\\
-                (weder in der Prüfungsordnung noch im Modulhandbuch existiert das Poster)
-            }
+            \item[$\square$] Notwendigkeit des Posters für die Verteidigung klären\footnote{Wweder in der Prüfungsordnung noch im Modulhandbuch existiert das Poster.}
             \item[$\square$]{
                 Möglichkeit der Prüfung der Präsentation vor der Verteidigung klären
                 \begin{itemize}
