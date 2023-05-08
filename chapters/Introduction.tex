@@ -1,9 +1,9 @@
 \chapter{Einleitung}\label{chap:Intro}
 Der Leitfaden der Staatlichen Studienakademie Dresden für Abschlussarbeiten\footnote{\label{fn:Leitfaden}Im Genauen: \enquote{Verbindlicher Leitfaden für die Anfertigung und formale Gestaltung wissenschaftlicher (Haus-)Arbeiten an der der Staatlichen Studienakademie Dresden}} ist für Anforderungen in den Ingenieurwissenschaften stellenweise ungeeignet oder widerspricht grundsätzlich den Gepflogenheiten im Fachgebiet. Diese Vorlage hat das Ziel, Studierenden in den Ingenieurwissenschaften eine für das Fachgebiet passendere Vorlage anzubieten.
 
-Diese Vorlage ist bei Overleaf\footnote{\url{https://www.overleaf.com/read/bfmdxnhntbxp} --\,zuletzt am 8. Februar 2023 erfolgreich abgerufen} und Github\footnote{\url{https://github.com/tchara/StADD-Thesis.git} --\,zuletzt am 8. Februar 2023 erfolgreich abgerufen} öffentlich verfügbar.
+Diese Vorlage ist bei Overleaf\footnote{\url{https://www.overleaf.com/read/bfmdxnhntbxp} --\,zuletzt am 8. Mai 2023 erfolgreich abgerufen} und Github\footnote{\url{https://github.com/tchara/StADD-Thesis.git} --\,zuletzt am 8. Mai 2023 erfolgreich abgerufen} öffentlich verfügbar.
 
-\comment{Beachten Sie bitte, dass dieses Dokument eine Empfehlung mit ein paar Leitlinien darstellt.\newline Es handelt sich \textbf{nicht} um eine verbindliche Richtlinie.}
+\comment{Beachten Sie bitte, dass dieses Dokument eine Empfehlung mit ein paar Leitlinien darstellt. Es handelt sich \textbf{nicht} um eine verbindliche Richtlinie.}
 
 \noindent Allgemein gelten die folgenden Grundsätze bei ingenieurwissenschaftlichen Ausarbeitungen:
 \begin{itemize}
@@ -26,7 +26,7 @@ Diese Vorlage ist bei Overleaf\footnote{\url{https://www.overleaf.com/read/bfmdx
         \end{itemize}
     }
     \item{
-        Insbesondere im Hauptteil der Ausarbeitung --\,in der Regel aber im gesamten Dokument\,-- referenzieren Sie die Quellen im Fließtext/Lauftext indem Sie auf den zitierten Autor\footnote{Das machen Sie mit dem Zitationsstil \enquote{unsrtnat} und der Anweisung \inlinecode{\textbackslash{}citeauthor\{quelle\}}.} oder die Referenz (z.B.\cite{bentley:1999}\footnote{Das hier ist ein spezieller Zitationsstil (\enquote{baalphadin}) für die Berufsakademie, welcher auf dem alphanummerischen DIN-Stil (\enquote{alphadin}) beruht. Sie können aber auch jeden anderen Stil verwenden, solange Sie eindeutig bleiben und nicht zwischen Stilen hin-und-her wechseln. Eine Liste mit Stilen finden Sie in der Overleaf-Hilfe: \url{https://www.overleaf.com/learn/latex/bibtex_bibliography_styles}}) im Quellenverzeichnis verweisen. {\color{red}In den Ingenieurwissenschaften gehören Quellenangaben auf keinen Fall in  Fußnoten!} Das bemerken Sie allein schon an den üblichen Zitierstilen aller großen Outlets, welche in den Ingenieur- und Naturwissenschaften verwendet werden: ACM, APA, CSE, DIN ISO 690 (Vancouver), IEEE, LNI, Springer, etc.\,pp.
+        Insbesondere im Hauptteil der Ausarbeitung --\,in der Regel aber im gesamten Dokument\,-- referenzieren Sie die Quellen im Fließtext/Lauftext indem Sie auf den zitierten Autor\footnote{Das machen Sie mit dem Zitationsstil \enquote{unsrtnat} und der Anweisung \inlinecode{\textbackslash{}citeauthor\{quelle\}}.} oder die Referenz (z.B.\cite{bentley:1999}\footnote{Das hier ist ein spezieller Zitationsstil (\enquote{baalphadin}) für die Berufsakademie, welcher auf dem alphanummerischen DIN-Stil (\enquote{alphadin}) beruht. Sie können aber auch jeden anderen Stil verwenden, solange Sie eindeutig bleiben und nicht zwischen Stilen hin-und-her wechseln. Eine Liste mit Stilen finden Sie in der Overleaf-Hilfe: \url{https://www.overleaf.com/learn/latex/bibtex_bibliography_styles} --\,zuletzt am 8. Mai 2023 erfolgreich abgerufen}) im Quellenverzeichnis verweisen. {\color{red}In den Ingenieurwissenschaften gehören Quellenangaben auf keinen Fall in  Fußnoten!} Das bemerken Sie allein schon an den üblichen Zitierstilen aller großen Outlets, welche in den Ingenieur- und Naturwissenschaften verwendet werden: ACM, APA, CSE, DIN ISO 690 (Vancouver), IEEE, LNI, Springer, etc.\,pp.
     }
     \item{
         In Fußnoten schreiben Sie ausschließlich weiterführende Informationen.
@@ -36,7 +36,8 @@ Diese Vorlage ist bei Overleaf\footnote{\url{https://www.overleaf.com/read/bfmdx
         \end{itemize}
     }
     \item{
-        Fußnoten setzen Sie einmal. Sollten Sie inhaltlich das gleiche später noch einmal benötigen, so verwenden Sie die gleiche Fußnote wieder, selbst wenn sie mehrere Seiten zurückliegen sollte. Hier als Beispiel die Wiederverwendung der Fußnote mit dem Leitfaden\footnoteref{fn:Leitfaden}\textsuperscript{,}\footnote{Wiederverwendete Fußnoten sind im PDF anklickbar und führen Lesende direkt zur entsprechenden Stelle im Dokument. Sie erstellen sie, indem Sie Ihrer Fußnote ein \inlinecode{{\textbackslash}label} geben und dann später mittels \inlinecode{{\textbackslash}footnoteref} referenzieren.}.
+        Fußnoten setzen Sie einmal. Sollten Sie inhaltlich das gleiche später noch einmal benötigen, so verwenden Sie die gleiche Fußnote wieder, selbst wenn sie mehrere Seiten zurückliegen sollte.\\
+        $\rightarrow$ Hier als Beispiel die Wiederverwendung der Fußnote mit dem Leitfaden\footnoteref{fn:Leitfaden}\textsuperscript{,}\footnote{Wiederverwendete Fußnoten sind im PDF anklickbar und führen Lesende direkt zur entsprechenden Stelle im Dokument. Sie erstellen sie, indem Sie Ihrer Fußnote ein \inlinecode{{\textbackslash}label} geben und dann später mittels \inlinecode{{\textbackslash}footnoteref} referenzieren.}.
     }
 \end{itemize}
 
@@ -54,7 +55,7 @@ Wie Sie sicherlich bemerkt haben, ist diese Vorlage so konfiguriert, dass Absät
 
 Die Anweisung \inlinecode{\textbackslash noindent} zu Beginn eines Absatzes unterdrückt den Zeilenvorschub. Das ist von Relevanz, falls Sie einen Wert ungleich Null für das \inlinecode{\textbackslash parindent} definiert haben. Es ist nämlich Standardeinstellung von \LaTeX{}, dass der erste Absatz nach der Überschrift des Kapitels bzw. der Sektion nicht eingerückt wird, alle anderen aber schon. Das ist unschön, wenn Sie ein Blockelement im Fließtext haben, wie zum Beispiel zu Beginn dieses Kapitels nach dem Kommentar. Wie Sie im Quelltext sehen können, ist an der entsprechenden Stelle ein \inlinecode{\textbackslash noindent} platziert. Beobachten Sie das Verhalten, wenn Sie in der \texttt{config.tex} den Wert für \inlinecode{\textbackslash parindent} verändern!
 
-Apropos Absätze: {\color{red}Absatzumbrüche erzeugen Sie in \LaTeX\ immer mit einem doppelten Zeilenumbruch im Quelltext.} Achten Sie also drauf, wo Sie einzelne und doppelte Zeilenumbrüche im Quelltext verwenden. Erzeugen Sie keine Absatzumbrüche durch doppelte \LaTeX{}-Zeilenumbrüche (\inlinecode{\textbackslash\textbackslash\textbackslash\textbackslash}) oder entsprechende Ersatzkommandos wie \texttt{\textbackslash newline}. Überlegen Sie auch genau, wann Sie Seitenumbrüche (\inlinecode{\textbackslash clearpage} und \inlinecode{\textbackslash cleardoublepage}) verwenden.
+Apropos Absätze: {\color{red}Absatzumbrüche erzeugen Sie in \LaTeX\ immer mit einem doppelten Zeilenumbruch im Quelltext.} Achten Sie also drauf, wo Sie einzelne und doppelte Zeilenumbrüche im Quelltext verwenden. Erzeugen Sie keine Absatzumbrüche durch doppelte \LaTeX{}-Zeilenumbrüche (\inlinecode{\textbackslash\textbackslash\textbackslash\textbackslash}) oder entsprechende Ersatzkommandos wie \inlinecode{\textbackslash newline}. Überlegen Sie auch, wann Sie Seitenumbrüche (\inlinecode{\textbackslash clearpage} und \inlinecode{\textbackslash cleardoublepage}) verwenden.
 
 Gerne verwenden Studierende für wichtige Begriffe einen \Gls{glossar}. Das ist recht einfach und wird in dieser Vorlage mit dem \enquote{\texttt{glossaries}}-Paket umgesetzt. Alle Glossareinträge befinden sich in der Datei \texttt{frontbackmatter\textbackslash Glossary.tex} und sollten dort von Ihnen verwaltet werden. Sie werden mit der Anweisung \inlinecode{\textbackslash Gls\{Eintrag\}} referenziert.
 
@@ -67,7 +68,7 @@ Gerne verwenden Studierende für wichtige Begriffe einen \Gls{glossar}. Das ist 
 
 Außerdem gibt es, wie Sie sicherlich gemerkt haben, auch ein paar Tricks für die korrekte Referenzierung des Plurals. Dazu verwenden Sie die Anweisung \inlinecode{\textbackslash Glspl\{abk\}}. Beachten Sie, dass beim erstmaligen Aufruf (siehe oben) das Verhalten von \texttt{acrfull} verwendet wird.
 
-Näheres zum Umgang mit dem \enquote{glossaries}-Paket finden Sie in der Overleaf-Hilfe unter \url{https://www.overleaf.com/learn/latex/Glossaries}.
+Näheres zum Umgang mit dem \enquote{glossaries}-Paket finden Sie in der Overleaf-Hilfe unter \url{https://www.overleaf.com/learn/latex/Glossaries}\footnote{Zuletzt am 8. Mai 2023 erfolgreich abgerufen}.
 
 Ein letzter Stilhinweis: Vermeiden Sie nach Möglichkeit Silben-, Wort-, Satz- und Absatzwaisen. D.h., dass Sie vermeiden eine neue Zeile oder gar eine ansonsten leere Seite mit nur einer Silbe oder einem einzelnen Wort zu beginnen. Versuchen Sie, Seiten mit weniger als $5$ Zeilen zu vermeiden.
 
@@ -81,6 +82,8 @@ Apropos Silben: Bei langen Kompositen und an manchen Zeilenenden tut sich \LaTeX
 
 Der Rest dieses Werkes ist lediglich ein Platzhalter für die grundständige Struktur einer ingenieurwissenschaftlichen Ausarbeitung und gibt dabei ein paar Einblicke in den Textsatz mit dieser \LaTeX{}-Vorlage\footnote{Eine Word-Vorlage wurde erst einmal nicht erstellt. Sollten Sie Word bevorzugen, folgen Sie sinngemäß dieser Vorlage!}\textsuperscript{,}\footnote{Im Allgemeinen finden Sie in den Kapiteln Hinweise auf die jeweils geforderten Inhalte.}. Befolgen Sie mit Ausnahme der hier folgenden Hinweise ansonsten den eingangs dieses Kapitels erwähnten  Leitfaden\footnoteref{fn:Leitfaden}.
 
+\comment{Beachten Sie unbedingt die Hinweistexte in der \texttt{config.tex}, beispielsweise zum Auftragsblatt (siehe \hyperlink{taskpage}{Seite }\pageref{taskpage}) oder dem Einsatz von Bib\LaTeX\ anstelle von Bib\TeX.}
+
 
 \section{Motivation}\label{sec:Intro:Motivation}
 Beschreiben Sie die Motivation hinter der Themenstellung. Weshalb ist es wichtig, dass Sie das Thema wissenschaftliche bearbeiten und quantitativ belastbare Ergebnisse produzieren?
@@ -88,8 +91,6 @@ Beschreiben Sie die Motivation hinter der Themenstellung. Weshalb ist es wichtig
 
 \section{Ziel der Arbeit}\label{sec:Intro:Goal}
 Beschreiben Sie kurz und prägnant das Ziel Ihrer Arbeit. Sollten Sie Thesen haben, wäre hier ein guter Ort, um sie erstmals aufzuführen.
-
-\comment{Beachten Sie unbedingt die Hinweistexte in der \texttt{config.tex}, beispielsweise zum Auftragsblatt (siehe \hyperlink{taskpage}{Seite }\pageref{taskpage}) oder dem Einsatz von Bib\LaTeX\ anstelle von Bib\TeX.}
 
 
 \section{Gliederung}\label{sec:Intro:Structure}
