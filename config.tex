@@ -92,9 +92,9 @@
 % Hinweise zur Geometrie im Dokument beachten!
 \usepackage{geometry}
 \geometry{
-    inner=40mm,
-    outer=30mm,
-    top=30mm
+	inner=40mm,
+	outer=30mm,
+	top=30mm
 }
 % Setzen Sie im folgenden die Option „htt“, wenn Sie wollen, dass
 % Text in den Umgebungen \texttt und \ttfamily auch den Trennregeln
@@ -240,7 +240,7 @@
 \definecolor{cyan}{cmyk}{0.78, 0.19, 0.01, 0.0}
 \definecolor{lightcyan}{cmyk}{0.39, 0.095, 0.005, 0.0}
 \definecolor{extralightcyan}{cmyk}{0.16, 0.1, 0.0, 0.0}
-    
+
 \definecolor{shadeThe}{cmyk}{.1,.05,0,0}		% HKS44_10%
 \definecolor{frameThe}{cmyk}{.7,.35,0,0}		% HKS44_70%
 \definecolor{shadeDef}{cmyk}{.07,0,.1,0}		% HKS65_10%
@@ -275,20 +275,20 @@
 \usepackage{wrapfig}
 
 \newcommand{\inlinecode}[1]{%
-    \colorbox{extralightcyan}{%
-        \texttt{#1}%
-    }%
+	\colorbox{extralightcyan}{%
+		\texttt{#1}%
+	}%
 }%
 
 \newcommand{\mytable}[0]{%
 	\setcounter{table}{\thethmhelper}%
 	\addtocounter{thmhelper}{1}%
-	}{%
+}{%
 }%
 \newcommand{\myequation}[0]{%
 	\setcounter{equation}{\thethmhelper}%
 	\addtocounter{thmhelper}{1}%
-	}{%
+}{%
 }%
 \newenvironment{workingthesis}[1][]{%
 	\addtocounter{thesiscount}{1}%
@@ -378,8 +378,8 @@
 \numberwithin{table}{section}
 \numberwithin{equation}{section}
 \addto\extrasngerman{%
-    \renewcommand{\figureautorefname}{Abbildung}
-    \renewcommand{\tableautorefname}{Tabelle}
+	\renewcommand{\figureautorefname}{Abbildung}
+	\renewcommand{\tableautorefname}{Tabelle}
 	\renewcommand{\subsectionautorefname}{Unterabschnitt}%
 	\renewcommand{\sectionautorefname}{Abschnitt}%
 	\renewcommand{\chapterautorefname}{Kapitel}%
@@ -401,15 +401,15 @@
 }%
 \newcommand{\img}[5]{%
 	\begin{figure}[htbp]%
-	%% zwei Abbildungen nebeneinander
-    %%  #1 Breite der Abbildung
-	%%  #2 Abbildung
-	%%  #3 Label
-	%%  #4 TOC-Beschriftung
-	%%  #5 Beschriftung
-	%%
-	%% (Falls es komisch aussieht, setzen Sie
-	%%  nur „t“ oder „tb“ statt „htbp“)
+		%% Eine normale Abbildung
+		%%  #1 Breite der Abbildung
+		%%  #2 Abbildung
+		%%  #3 Label
+		%%  #4 TOC-Beschriftung
+		%%  #5 Beschriftung
+		%%
+		%% (Falls es komisch aussieht, setzen Sie
+		%%  nur „t“ oder „tb“ statt „htbp“)
 		\vspace{2.5em}%
 		\centering%
 		\includegraphics[width=#1]{figures/#2}
@@ -418,7 +418,7 @@
 		\addtocounter{thmhelper}{1}%
 		\caption[#4]{#5}\label{fig:#3}%
 		\vspace{1.5em}%
-		\end{figure}%
+	\end{figure}%
 }%
 \newcommand\imgAB[9]{%
 	%% LaTeX-Hexerei mit \imgABcontinued
@@ -437,7 +437,7 @@
 \newcommand{\imgABcontinued}[2]{%
 	\begin{figure}[htbp]%
 	%% zwei Abbildungen nebeneinander
-    %%  #1 Label des Containers
+	%%  #1 Label des Containers
 	%%  #2 TOC-Beschriftung des Containers
 	%%  #3 Beschriftung des Containers
 	%%  #4 Breite des linken Containers (A)
@@ -524,7 +524,7 @@
 \newcommand{\imgABCcontinued}[3]{%
 	\begin{figure}[htbp]%
 	%% drei Abbildungen nebeneinander
-    %% #1 Label des Containers
+	%% #1 Label des Containers
 	%% #2 TOC-Beschriftung des Containers
 	%% #3 Beschriftung des Containers
 	%% #4 Breite der linken Abbildung (A)
@@ -582,7 +582,7 @@
 \newcommand{\imgABCstackcontinued}[3]{%
 	\begin{figure}[htbp]%
 	%% drei Abbildungen untereinander
-    %% #1 Label des Containers
+	%% #1 Label des Containers
 	%% #2 TOC-Beschriftung des Containers
 	%% #3 Beschriftung des Containers
 	%% #4 Breite der oberen Abbildung (A)
@@ -642,7 +642,7 @@
 \newcommand{\imgABCDcontinued}[6]{%
 	\begin{figure}[htbp]%
 	%% vier Abbildungen in 2x2-Anordnung (Spalten je 50%)
-    %% #1 Label des Containers
+	%% #1 Label des Containers
 	%% #2 TOC-Beschriftung des Containers
 	%% #3 Beschriftung des Containers
 	%% #4 Breite der oberen, linken Abbildung (A)
@@ -722,20 +722,20 @@
 \usepackage{fancyhdr}
 \setlength{\headheight}{12.2pt}
 \fancypagestyle{myfancy}{%
-    \fancyhf{}
-    \fancyhead[LE,RO]{\leftmark}
-    % Die folgende Zeile einkommentieren, wenn Ihr Name auf jeder
-    % Seite innen gesetzt werden soll.
-    %\fancyfoot[RE,LO]{\myName}
-    \fancyfoot[LE,RO]{\thepage}
-    \renewcommand{\headrulewidth}{0.2pt}%
-    \renewcommand{\footrulewidth}{0pt}%
+	\fancyhf{}
+	\fancyhead[LE,RO]{\leftmark}
+	% Die folgende Zeile einkommentieren, wenn Ihr Name auf jeder
+	% Seite innen gesetzt werden soll.
+	%\fancyfoot[RE,LO]{\myName}
+	\fancyfoot[LE,RO]{\thepage}
+	\renewcommand{\headrulewidth}{0.2pt}%
+	\renewcommand{\footrulewidth}{0pt}%
 }
 \fancypagestyle{plain}{%
-    \fancyhf{}%
-    \fancyfoot[LE,RO]{\thepage}%
-    \renewcommand{\headrulewidth}{0pt}%
-    \renewcommand{\footrulewidth}{0pt}%
+	\fancyhf{}%
+	\fancyfoot[LE,RO]{\thepage}%
+	\renewcommand{\headrulewidth}{0pt}%
+	\renewcommand{\footrulewidth}{0pt}%
 }
 
 % Konfiguration der Absatzumbrüche
@@ -750,18 +750,18 @@
 \PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref}
 \hypersetup{%
-	pdfmetalang  = {de-DE},
-	pdfauthor       = {\myName},
-	pdftitle        = {{\myTitle}},
-	pdfsubject      = {Abschlussarbeit an der Berufsakademie Sachsen, \myAcademy},
-	pdfcopyright    = {Copyright ©\mySubmissionDate\ by \myName.\012All rights reserved.},
-	pdfcenterwindow = {true},
-	pdfpagelayout   = {TwoColumnRight},
-	colorlinks      = {true},
-	linkcolor       = {HKS41-100},
-	citecolor       = {HKS57-100},
-	filecolor       = {HKS07-100},
-	urlcolor        = {HKS44-100},
+	pdfmetalang		= {de-DE},
+	pdfauthor		= {\myName},
+	pdftitle		= {{\myTitle}},
+	pdfsubject		= {Abschlussarbeit an der Berufsakademie Sachsen, \myAcademy},
+	pdfcopyright	= {Copyright ©\mySubmissionDate\ by \myName.\012All rights reserved.},
+	pdfcenterwindow	= {true},
+	pdfpagelayout	= {TwoColumnRight},
+	colorlinks		= {true},
+	linkcolor		= {HKS41-100},
+	citecolor		= {HKS57-100},
+	filecolor		= {HKS07-100},
+	urlcolor		= {HKS44-100},
 }
 \usepackage[all]{hypcap}
 
