@@ -57,6 +57,10 @@ twoside, % auskommentieren, falls Sie einseitig binden wollen
 \pagestyle{plain}
 \include{frontbackmatter/Title}
 \pagenumbering{alph}
+\ifthenelse{\boolean{frontdeclaration}}{%
+    \include{frontbackmatter/Declaration}%
+    \cleardoublepage%
+}{}
 \include{frontbackmatter/Abstract}
 \cleardoublepage\label{taskpage}
 \ifthenelse{\boolean{auftragsblatt}}{
@@ -99,7 +103,8 @@ twoside, % auskommentieren, falls Sie einseitig binden wollen
 %
 \pagestyle{plain}
 \include{frontbackmatter/Acknowledgements}
-\include{frontbackmatter/Declaration}
-
+\ifthenelse{\boolean{frontdeclaration}}{}{%
+    \include{frontbackmatter/Declaration}%
+}
 \include{frontbackmatter/Checklist}
 \end{document}
