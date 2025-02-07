@@ -3,11 +3,11 @@
 \newgeometry{margin=30mm}
 \begin{titlepage}
 
-	% If printed on two sides, center the title page
-	%\condTWOSIDE{\changetext{}{19mm}{}{19mm}{}}
-
 	\vspace{1cm}
 	\begin{center}
+		%% Zentrierung des DHSN-Logos entlang des Schriftzugs „DHSN“.
+		%% Die rote Ecke ist nach links versetzt.
+		\hspace*{-2cm}
 		\includegraphics[width=7.7cm]{figures/CD/DHSN-Logo} \\ 
 	\end{center}
 
@@ -21,10 +21,10 @@
 	\vfill
 
 	\ifthenelse{\boolean{lockflag}}{
-	\begin{center}
-        \includegraphics[width=1cm]{figures/exclamationmark.pdf}\\
-		\color{HKS14-100}\textbf{Nur zur Begutachtung\\ {\small(Sperrvermerk)}}
-	\end{center}
+		\begin{center}
+			\includegraphics[width=1cm]{figures/exclamationmark.pdf}\\
+			\color{HKS14-100}\textbf{Nur zur Begutachtung\\ {\small(Sperrvermerk)}}
+		\end{center}
 	}{}
 
 	\vfill
@@ -61,12 +61,12 @@
 
 	\begin{center}
 		\begin{tabular}{ll}
-		  Ausbildender Praxispartner:   & \myCompany\\
-		                                & \myCompanyAddress\\
-		  Begutachtung Praxispartner:   & \myExpert\\
-		  Begutachtung DHSN:      & \myProf
+			Ausbildender Praxispartner:	& \myCompany\\
+										& \myCompanyAddress\\
+			Begutachtung Praxispartner:	& \myExpert\\
+			Begutachtung DHSN:			& \myProf
 		\end{tabular}
-	\end{center} 
+	\end{center}
 
 	% If printed on two sides, center the title page
 
@@ -78,7 +78,11 @@
 
 \vfill
 
-\ifthenelse{\boolean{lockflag}}{{\noindent\color{HKS14-100}\textbf{\Large Sperrvermerk}\vspace{.5em}\\\normalsize Diese Ausarbeitung darf nicht ohne Genehmigung des betreuenden Praxispartners (\myCompany) zugänglich gemacht werden. Davon ausgenommen sind die am Prü\-f\-ungs\-ver\-fah\-ren beteiligten Personen, insbesondere ist der Zugang für die Be\-gut\-ach\-ten\-den sicher zu stellen.}}{}
+\ifthenelse{\boolean{lockflag}}{{\noindent\color{HKS14-100}\textbf{\Large Sperrvermerk}\vspace{.5em}\\\normalsize Die vorliegende Ausarbeitung mit dem Titel \emph{\myTitle} beinhaltet interne und vertrauliche Informationen des Unternehmens \emph{\myCompany}. Die Weitergabe des Inhaltes der Ausarbeitung oder gegebenenfalls beiliegender Daten ist sowohl im Gesamten als auch in Teilen untersagt. Es dürfen darüber hinaus keinerlei Kopien oder Abschriften erstellt werden. Davon ausgenommen sind die am Prü\-f\-ungs\-ver\-fah\-ren beteiligten Personen, insbesondere ist der Zugang für die Be\-gut\-ach\-ten\-den sicher zu stellen.
+
+Dieser Sperrvermerk entfällt automatisch in dem Moment einer Patentanmeldung oder anderweitigen Veröffentlichung der Forschungsergebnisse, beispielsweise durch die Markteinführung eines auf ihnen basierenden Produkts durch das Unternehmen \emph{\myCompany} oder eins seiner Dach-, Tochter-, Konsortial- oder Partnerunternehmen.
+
+Spätestens fünf Jahre nach Abschluss des Prüfungsverfahrens entfällt der Sperrvermerk.}}{}
 
 \vfill
 
