@@ -12,7 +12,7 @@ Diese Vorlage ist bei Overleaf\footnote{\url{https://www.overleaf.com/read/bfmdx
             \item Fußnoten wieder verwenden (entweder \enquote{global} oder pro Kapitel),
             \item vollständige Quellenangaben nur im Literaturverzeichnis (im Hauptteil nur Verweise verwenden) und
             \item Sie als Autor dürfen eigene Inhalte kommentieren, wenn Sie die Lesenden beim Verstehen der Inhalte unterstützen wollen. Machen Sie Kommentare so deutlich kenntlich, dass sie sich eindeutig vom restlichen Fließtext unterscheiden! Siehe Beispiel oben.
-            \item Der vorherige Punkt ist von Belang, da Sie sich nicht selbst plagiieren können; eigene Vorarbeiten, etc. können Sie nicht als Quellen verwenden! Um Lesende dennoch auf die Existenz von Vorarbeiten hinzuweisen, können Sie einen Kommentar von der Form \enquote{Ergebnisse aus der vorherigen Studienarbeit} o.\,ä. verwenden.
+            \item Der vorherige Punkt ist von Belang, da Sie sich nicht selbst plagiieren können; eigene Vorarbeiten etc. können Sie nicht als Quellen verwenden! Um Lesende dennoch auf die Existenz von Vorarbeiten hinzuweisen, können Sie einen Kommentar von der Form \enquote{Ergebnisse aus der vorherigen Studienarbeit} o.\,ä. verwenden.
         \end{itemize}
     }
     \item{
@@ -39,7 +39,7 @@ Diese Vorlage ist bei Overleaf\footnote{\url{https://www.overleaf.com/read/bfmdx
     }
 \end{itemize}
 
-\comment{Die in den Wirtschafts- und Geisteswissenschaften weit verbreitete Praxis, Quellen und Referenzen in den Fußnoten aufzuführen hat auch seine guten Gründe und Vorteile. Wenn Sie einzelne Seiten aus einem Werk kopieren sind sofort Primärtext und Quellenangaben auf einem Blatt. Die Kopie ist sofort verwendbar. -- In den Ingenieruwissenschaften müssen Sie zusätzlich zum Primärtext auch das Literaturverzeichnis kopieren damit die Kopie vollständig ist.}
+\comment{Die in den Wirtschafts- und Geisteswissenschaften weit verbreitete Praxis, Quellen und Referenzen in den Fußnoten aufzuführen hat auch seine guten Gründe und Vorteile. Wenn Sie einzelne Seiten aus einem Werk kopieren sind sofort Primärtext und Quellenangaben auf einem Blatt. Die Kopie ist sofort verwendbar. -- In den Ingenieuruwissenschaften müssen Sie zusätzlich zum Primärtext auch das Literaturverzeichnis kopieren damit die Kopie vollständig ist.}
 
 Beachten Sie, dass bei doppelseitigem Druck neue Kapitel immer auf einer rechten Seite beginnen, auch wenn das zu einer leeren linken Seite davor führt.
 
@@ -48,7 +48,7 @@ Beim doppelseitigen Druck ist der innere Rand der Seiten schmaler als der äuße
 Wie Sie sicherlich bemerkt haben, ist diese Vorlage so konfiguriert, dass Absätze einen kleinen vertikalen Abstand zueinander haben. Die erste Zeile jedes Absatzes ist \emph{nicht} eingerückt. Dieses Verhalten können Sie in der Datei \texttt{config.tex} anpassen:
 \begin{itemize}
     \item \inlinecode{\textbackslash setlength\{\textbackslash parindent\}\{0pt\}} --\,definiert den Zeilenvorschub, hier auf Null, und
-    \item \inlinecode{\textbackslash setlength\{\textbackslash parskip\}\{4pt\}} --\,definiert die Absatzdistanz, hier auf 4 Punkte.
+    \item \inlinecode{\textbackslash setlength\{\textbackslash parskip\}\{4pt\}} --\,definiert die Absatzdistanz, hier auf $4$ Punkte.
 \end{itemize}
 
 Die Anweisung \inlinecode{\textbackslash noindent} zu Beginn eines Absatzes unterdrückt den Zeilenvorschub. Das ist von Relevanz, falls Sie einen Wert ungleich Null für das \inlinecode{\textbackslash parindent} definiert haben. Es ist nämlich Standardeinstellung von \LaTeX{}, dass der erste Absatz nach der Überschrift des Kapitels bzw. der Sektion nicht eingerückt wird, alle anderen aber schon. Das ist unschön, wenn Sie ein Blockelement im Fließtext haben, wie zum Beispiel zu Beginn dieses Kapitels nach dem Kommentar. Wie Sie im Quelltext sehen können, ist an der entsprechenden Stelle ein \inlinecode{\textbackslash noindent} platziert. Beobachten Sie das Verhalten, wenn Sie in der \texttt{config.tex} den Wert für \inlinecode{\textbackslash parindent} verändern!
